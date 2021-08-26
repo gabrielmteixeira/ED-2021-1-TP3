@@ -12,7 +12,6 @@ class ArvoreBinaria {
 
     void insere(std::string chave, std::string item);
     void imprime();
-    CelulaArvore* pesquisa(std::string chave);
     int remove(std::string chave)
     void limpa();
   
@@ -20,7 +19,6 @@ class ArvoreBinaria {
     void insereRecursivo(CelulaArvore* &celula, std::string chave,
                           std::string item);
     void apagaRecursivo(CelulaArvore* celula);
-    CelulaArvore* pesquisaRecursivo(CelulaArvore* celula, std::string chave);
     int removeRecursivo(CelulaArvore* &celula, std::string item);
     void antecessor(CelulaArvore* celula, CelulaArvore* &aux);
     void caminhaInOrdem(CelulaArvore* celula);

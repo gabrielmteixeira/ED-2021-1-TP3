@@ -4,27 +4,6 @@ ArvoreBinaria::ArvoreBinaria() {
   this->raiz = nullptr;
 }
 
-CelulaArvore* ArvoreBinaria::pesquisa(std::string chave) {
-  return pesquisaRecursivo(this->raiz, chave);
-}
-
-CelulaArvore* ArvoreBinaria::pesquisaRecursivo(CelulaArvore* celula,
-                                                std::string chave) {
-  CelulaArvore* aux;
-
-  if(celula == nullptr) {
-    aux = nullptr;
-    return aux;
-  }
-  if (chave < celula->chave) {
-    return pesquisaRecursivo(celula->esq, chave);
-  } else if (chave > celula->chave) {
-    return pesquisaRecursivo(celula->dir, chave);
-  } else {
-    return celula;
-  }
-}
-
 void ArvoreBinaria::insere(std::string chave, std::string item) {
   insereRecursivo(this->raiz, chave, item);
 }
