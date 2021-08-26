@@ -29,13 +29,15 @@ void ListaEncadeada::limpa() {
 }
 
 int ListaEncadeada::somaItensInteiros() {
-  tamanhoDado = 8;
+  int tamanhoDado = 8;
   int soma = 0;
   CelulaLista* celula = this->primeiro;
 
-  while(aux != nullptr) {
+  while(celula != nullptr) {
     for(int i = 0; i < tamanhoDado; i++) {
-      soma = soma + (std::pow(7-i, 2) * std::stoi(celula->item[i]));
+      // 48 == valor inteiro do char 0 na tabela ascii
+      int binario = celula->item[i] % 48;
+      soma = soma + (std::pow(7-i, 2) * binario);
     }
     celula = celula->prox;
   }

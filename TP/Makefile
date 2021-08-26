@@ -31,7 +31,7 @@ OBJ_FOLDER = ./obj/
 SRC_FOLDER = ./src/
 
 # all sources, objs, and header files
-MAIN = Main
+MAIN = main
 TARGET = run.out
 SRC = $(wildcard $(SRC_FOLDER)*.cpp)
 OBJ = $(patsubst $(SRC_FOLDER)%.cpp, $(OBJ_FOLDER)%.o, $(SRC))

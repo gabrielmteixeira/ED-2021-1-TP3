@@ -31,11 +31,11 @@ void ArvoreBinaria::insereRecursivo(CelulaArvore* &celula, std::string chave,
   }
 }
 
-int ArvoreBinaria::remove(std::string chave) {
+void ArvoreBinaria::remove(std::string chave) {
   return removeRecursivo(this->raiz, chave);
 }
 
-int ArvoreBinaria::removeRecursivo(CelulaArvore* &celula, std::string chave) {
+void ArvoreBinaria::removeRecursivo(CelulaArvore* &celula, std::string chave) {
   CelulaArvore* aux;
 
   if (celula == nullptr) {
