@@ -12,7 +12,7 @@ class ArvoreBinaria {
 
     void insere(std::string chave, std::string item);
     void imprime();
-    int remove(std::string chave)
+    int remove(std::string chave);
     void limpa();
   
   private:

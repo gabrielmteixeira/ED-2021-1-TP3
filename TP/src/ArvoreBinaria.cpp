@@ -5,6 +5,10 @@ ArvoreBinaria::ArvoreBinaria() {
   this->tamanho = 0;
 }
 
+ArvoreBinaria::~ArvoreBinaria() {
+  this->limpa();
+}
+
 void ArvoreBinaria::insere(std::string chave, std::string item) {
   insereRecursivo(this->raiz, chave, item);
 }
@@ -83,5 +87,18 @@ void ArvoreBinaria::caminhaInOrdem(CelulaArvore* celula, int &contador) {
     if (contador < this->tamanho) std::cout << celula->chave << " ";
     else std::cout << celula->chave << std::endl;
     caminhaInOrdem(celula->dir, contador);
+  }
+}
+
+void ArvoreBinaria::limpa() {
+  apagaRecursivo(this->raiz);
+  raiz = nullptr;
+}
+
+void ArvoreBinaria::apagaRecursivo(CelulaArvore* celula) {
+  if(celula != nullptr) {
+    apagaRecursivo(celula->esq);
+    apagaRecursivo(celula->dir);
+    delete celula;
   }
 }
