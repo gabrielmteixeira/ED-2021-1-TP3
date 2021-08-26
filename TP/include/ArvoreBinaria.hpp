@@ -21,9 +21,10 @@ class ArvoreBinaria {
     void apagaRecursivo(CelulaArvore* celula);
     int removeRecursivo(CelulaArvore* &celula, std::string item);
     void antecessor(CelulaArvore* celula, CelulaArvore* &aux);
-    void caminhaInOrdem(CelulaArvore* celula);
+    void caminhaInOrdem(CelulaArvore* celula, int &contador);
 
     Celula* raiz;
+    int tamanho;
 };
 
 #endif
