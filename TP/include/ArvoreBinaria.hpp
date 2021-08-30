@@ -16,6 +16,7 @@ class ArvoreBinaria {
     void limpa();
   
   private:
+    void trocaDados(CelulaArvore* celula, CelulaArvore* aux);
     void insereRecursivo(CelulaArvore* &celula, std::string chave,
                           std::string item);
     void apagaRecursivo(CelulaArvore* celula);

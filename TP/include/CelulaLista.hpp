@@ -16,6 +16,7 @@ class CelulaLista {
     CelulaLista* prox;
 
   friend class ListaEncadeada;
+  friend class ArvoreBinaria;
 };
 
 #endif

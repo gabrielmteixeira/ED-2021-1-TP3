@@ -53,7 +53,7 @@ void ArvoreBinaria::removeRecursivo(CelulaArvore* &celula, std::string chave) {
       delete aux;
     } else if (celula->esq == nullptr) {
       aux = celula;
-      celula = celula ->dir;
+      celula = celula->dir;
       delete aux;
     } else {
       antecessor(celula, celula->esq);
@@ -70,9 +70,20 @@ void ArvoreBinaria::antecessor(CelulaArvore* celula, CelulaArvore* &aux) {
   }
 
   celula->chave = aux->chave;
+  trocaDados(celula, aux);
   celula = aux;
   aux = celula->esq;
-  delete(celula);
+  delete celula;
+}
+
+void ArvoreBinaria::trocaDados(CelulaArvore* celula, CelulaArvore* aux) {
+  CelulaLista* dadoASerInserido = aux->dados.primeiro->prox;
+  celula->dados.limpa();
+
+  while(dadoASerInserido != nullptr) {
+    celula->dados.insereFinal(dadoASerInserido->item);
+    dadoASerInserido = dadoASerInserido->prox;
+  }
 }
 
 void ArvoreBinaria::imprime() {

@@ -18,6 +18,8 @@ class ListaEncadeada {
   private:
     CelulaLista* primeiro;
     CelulaLista* ultimo;
+
+  friend class ArvoreBinaria;
 };
 
 #endif

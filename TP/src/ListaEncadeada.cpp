@@ -1,4 +1,5 @@
 #include "../include/ListaEncadeada.hpp"
+#include <iostream>
 
 ListaEncadeada::ListaEncadeada() {
   this->primeiro = new CelulaLista();
@@ -29,15 +30,15 @@ void ListaEncadeada::limpa() {
 }
 
 int ListaEncadeada::somaItensInteiros() {
-  int tamanhoDado = 8;
+  int tamanhoDado = 8; // todas os dados são binários de 8 bits
   int soma = 0;
-  CelulaLista* celula = this->primeiro;
+  CelulaLista* celula = this->primeiro->prox;
 
   while(celula != nullptr) {
     for(int i = 0; i < tamanhoDado; i++) {
       // 48 == valor inteiro do char 0 na tabela ascii
       int binario = celula->item[i] % 48;
-      soma = soma + (std::pow(7-i, 2) * binario);
+      soma = soma + (std::pow(2, 7 - i) * binario);   
     }
     celula = celula->prox;
   }
