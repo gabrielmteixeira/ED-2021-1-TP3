@@ -96,7 +96,7 @@ void ArvoreBinaria::caminhaInOrdem(CelulaArvore* celula, int &contador) {
     caminhaInOrdem(celula->esq, contador);
     contador++;
     if (contador < this->tamanho) std::cout << celula->chave << " ";
-    else std::cout << celula->chave << std::endl;
+    else std::cout << celula->chave;
     caminhaInOrdem(celula->dir, contador);
   }
 }
